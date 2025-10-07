@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentina's Home - Decoración</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  
+  <!-- HEADER -->
+  <header class="header">
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <a href="index.html" class="logo">
+      <img src="Images/logoblanco.png" alt="Valentina's Home Logo">
+    </a>
+    <nav class="nav" id="nav">
+      <div class="close-btn" id="close-btn">&times;</div>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="inspiracion.html">Inspiración</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!--MAIN-->
+  <main>
+  <!-- HERO con carrusel -->
+  <section class="hero">
+    <div class="slider">
+      <div class="slide active" style="background-image: url(Images/54a40dae6cc42d915e69c7708e0c836d.jpg);"></div>
+      <div class="slide" style="background-image: url(Images/3b7d0a8067533414776fe42233d61e97.jpg);"></div>
+      <div class="slide" style="background-image: url(Images/0d8cf9ba4d4584bfbb66c5296dd1833e.jpg);"></div>
+    </div>
+    <div class="hero-text">
+      <h1>Valentina's Home</h1>
+      <p>Diseño que inspira, detalles que enamoran</p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about">
+    <h2>Nuestra filosofia</h2>
+    <p>
+      En Valentina's Home creemos que la decoración es un reflejo del alma. 
+      Cada pieza es seleccionada con cuidado para transmitir armonía, calidez y atemporalidad.
+      Nos inspiramos en la simplicidad elegante, donde menos es más.
+    </p>
+  </section>
+  </main>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; 2025 Valentina's Home - Todos los derechos reservados</p>
+    <p><a href="https://www.instagram.com/vhome__?utm_source=qr&igsh=em5nbjI5cHJtOXZx">Instagram</a>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    // Menú hamburguesa
+    const menuToggle = document.getElementById("menu-toggle");
+    const nav = document.getElementById("nav");
+    const closeBtn = document.getElementById("close-btn");
+
+    menuToggle.addEventListener("click", () => {
+      nav.classList.add("active");
+    });
+
+    closeBtn.addEventListener("click", () => {
+      nav.classList.remove("active");
+    });
+
+    // Carrusel automático
+    let slides = document.querySelectorAll(".slide");
+    let index = 0;
+
+    function showNextSlide() {
+      slides[index].classList.remove("active");
+      index = (index + 1) % slides.length;
+      slides[index].classList.add("active");
+    }
+
+    setInterval(showNextSlide, 5000); // cada 5 seg cambia
+  </script>
+</body>
+</html>

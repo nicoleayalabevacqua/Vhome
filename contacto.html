@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contacto | Valentina's Home</title>
+  <link rel="stylesheet" href="Style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">
+      <a href="index.html">
+        <img src="../Images/logonegroo.png" alt="Valentina's Home">
+      </a>
+    </div>
+    <nav id="nav" class="nav">
+      <button id="close-btn" class="close-btn" aria-label="Cerrar menú">&times;</button>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="inspiracion.html">Inspiración</a></li>
+        <li><a href="contacto.html" class="active">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+ <!--MAIN-->
+  <main class="page-content">
+    <section class="hero-contact">
+      <h1>Contacto</h1>
+    </section>
+
+    <section class="contact-info">
+      <div class="info-wrap">
+        <p>Sendero, Nordelta, Argentina</p>
+        <p><a href="mailto:bevaqcuadaniela@gmail.com">bevaqcuadaniela@gmail.com</a> | +54 9 299 4139683</p>
+        <p>Lun - Jue: 8.30am - 6.00pm · Viernes: 8.30am - 2.30pm</p>
+      </div>
+    </section>
+
+    <!-- FORMULARIO -->
+    <section class="formulario">
+      <form id="contact-form" action="https://formsubmit.co/ayalabevacquanicole@gmail.com"method="post">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="nombre">*Nombre</label>
+            <input id="nombre" name="nombre" type="text" required>
+          </div>
+
+          <div class="form-group">
+            <label for="apellido">*Apellido</label>
+            <input id="apellido" name="apellido" type="text" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">*Email</label>
+            <input id="email" name="email" type="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="telefono">Teléfono</label>
+            <input id="telefono" name="telefono" type="tel">
+          </div>
+
+          <div class="form-group full">
+            <label for="pais">*País</label>
+            <input id="pais" name="pais" type="text" required>
+          </div>
+
+          <div class="form-group">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje"></textarea>
+          </div>
+
+          <div class="form-group full">
+            <button type="submit" class="btn-enviar">ENVIAR</button>
+          </div>
+        </div>
+      </form>
+
+      <!-- Mensaje de éxito -->
+      <div id="form-success" class="form-success" style="display:none;">
+        ¡Muchas gracias! Te responderemos a la brevedad.
+      </div>
+    </section>
+  </main>
+
+  <!-- SCRIPTS -->
+  <script>
+    // menú mobile
+    const menuToggle = document.getElementById('menu-toggle');
+    const nav = document.getElementById('nav');
+    const closeBtn = document.getElementById('close-btn');
+
+    if(menuToggle){
+      menuToggle.addEventListener('click', () => nav.classList.add('active'));
+      closeBtn.addEventListener('click', () => nav.classList.remove('active'));
+      nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('active')));
+    }
+  </script>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; 2025 Valentina's Home - Todos los derechos reservados</p>
+    <p><a href="https://www.instagram.com/vhome__?utm_source=qr&igsh=em5nbjI5cHJtOXZx">Instagram</a>
+  </footer>
+</body>
+</html>
