@@ -1,0 +1,16 @@
+// Para centrar absolutamente un elemento
+@mixin center-absolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Para responsive text
+@mixin responsive-text($size) {
+  font-size: $size;
+
+  @media (max-width: 768px) {
+    font-size: ($size * 0.7);
+  }
+}

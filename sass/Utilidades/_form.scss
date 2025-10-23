@@ -1,0 +1,86 @@
+.formulario {
+  padding: 40px 20px 80px;
+  max-width: 960px;
+  margin: 0 auto;
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    &.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-size: 0.9rem;
+      color: $color-text;
+      font-weight: 500;
+    }
+
+    input, select, textarea {
+      border: none;
+      border-bottom: 1px solid #ccc;
+      padding: 8px 6px;
+      font-size: 1rem;
+      background: transparent;
+      outline: none;
+      transition: border-color 0.2s ease;
+      font-family: inherit;
+
+      &:focus {
+        border-bottom-color: $color-text;
+      }
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+      padding-top: 6px;
+    }
+  }
+
+  .btn-enviar {
+    background: #111;
+    color: $color-white;
+    border: none;
+    padding: 12px 28px;
+    font-size: 0.95rem;
+    letter-spacing: 0.6px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+
+    &:hover {
+      background: #333;
+    }
+  }
+
+  .form-success {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    background: #dff0d8;
+    color: #3c763d;
+    border: 1px solid #b2d8b2;
+    border-radius: 8px;
+    font-size: 16px;
+    text-align: center;
+    animation: fadeIn 0.8s ease-in-out;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px);}
+  to { opacity: 1; transform: translateY(0);}
+}

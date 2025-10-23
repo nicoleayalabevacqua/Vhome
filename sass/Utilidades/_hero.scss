@@ -1,0 +1,50 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background: url('../Images/54a40dae6cc42d915e69c7708e0c836d.jpg') center/cover no-repeat;
+
+  .slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+
+    &.active {
+      opacity: 1;
+    }
+  }
+
+  .hero-text {
+    @include center-absolute;
+    z-index: 2;
+    color: $color-white;
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+
+    h1 {
+      @include responsive-text(3rem);
+      margin-bottom: 1rem;
+    }
+
+    p {
+      @include responsive-text(1.5rem);
+      font-weight: 100;
+      color: lighten($color-white, 20%);
+    }
+  }
+}
