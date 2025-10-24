@@ -37,7 +37,7 @@ p {
 
 /* -------------------------- HEADER + MENÚ --------------------------- */
 .header {
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 100%;
   padding: 20px 40px;
@@ -96,6 +96,18 @@ p {
 
 .nav ul li a:hover {
   color: #888;
+}
+
+.navbar-toggler {
+  border-color: white;
+}
+
+.navbar-toggler-icon {
+  filter: invert(1); /* icono blanco sobre fondo oscuro */
+}
+
+.nav-link {
+  color: white !important;
 }
 
 /* Estilo del menú de navegación */
